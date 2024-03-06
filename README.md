@@ -1,6 +1,6 @@
-# computadordevoo
+# Computador de Voo
 
-Computador de Voo SUPER
+Computador de Voo - Projeto SUPER
 
 ## Getting Started
 
