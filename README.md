@@ -2,4 +2,4 @@
 
 Computador de Voo - Projeto SUPER
 
-Emulação - Google Chrome
+Aplicações em andamento... :)
