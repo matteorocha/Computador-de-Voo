@@ -28,11 +28,11 @@ class _MyWheelAppState extends State<MyWheelApp> {
   double angle = 0.0;
   double scale = 1.0;
   Offset? lastPosition;
-
-  String getAngleText() {
+/* 
+String getAngleText() {
     return 'Ângulo: ${angle.toStringAsFixed(2)} graus';
   }
-
+*/
   void showMessage(String message) {
     showDialog(
       context: context,
@@ -90,10 +90,10 @@ class _MyWheelAppState extends State<MyWheelApp> {
                     child: Text(
                         'Prender'), // * Aplicar o sistema de prender o zoom
                   ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text(getAngleText()),
-                  ),
+                  // ElevatedButton(
+                    // onPressed: () {},
+                     // child: Text(getAngleText()),
+                  // ),
                 ],
               ),
               SizedBox(height: 10),
