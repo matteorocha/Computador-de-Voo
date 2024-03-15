@@ -2,4 +2,3 @@
 
 Computador de Voo - Projeto SUPER
 
-Aplicações em andamento... :)
