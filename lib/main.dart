@@ -10,8 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Computador de voo',
-      theme: ThemeData(
-      ),
+      theme: ThemeData(),
       home: MyWheelApp(),
     );
   }
@@ -24,13 +23,9 @@ class MyWheelApp extends StatefulWidget {
 
 class _MyWheelAppState extends State<MyWheelApp> {
   double angle = 0.0;
-  double scale = 1.0;
   Offset? lastPosition;
-  /* 
-  String getAngleText() {
-  return 'Ângulo: ${angle.toStringAsFixed(2)} graus';
-  }
-  */
+  bool isRotationLocked = false;
+
   void showMessage(String message) {
     showDialog(
       context: context,
@@ -53,9 +48,6 @@ class _MyWheelAppState extends State<MyWheelApp> {
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
-    // double largura = size.width;
-    // double altura = size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text('Computador de Vôo'),
@@ -88,88 +80,75 @@ class _MyWheelAppState extends State<MyWheelApp> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        showMessage('Sistema Preso');
+                        setState(() {
+                          isRotationLocked = !isRotationLocked;
+                        });
+                        showMessage(isRotationLocked ? 'Sistema Preso' : 'Sistema Desbloqueado');
                       },
-                      child: Text(
-                          'Prender'), // * Aplicar o sistema de prender o zoom
+                      child: Text('Prender'),
                     ),
-                    // ElevatedButton(
-                    // onPressed: () {},
-                    // child: Text(getAngleText()),
-                    // ),
                   ],
                 ),
                 SizedBox(height: 10),
-
-                //* Ajustar a dimensão das iamgens da régua
                 Center(
                   child: InteractiveViewer(
-                    // boundaryMargin: EdgeInsets.all(2.0),
+                    // boundaryMargin: EdgeInsets.all(100),
                     minScale: 0.1,
                     maxScale: 2.5,
-                    child: GestureDetector(
-                      onScaleUpdate: (details) {
-                        if (lastPosition != null) {
-                          Offset centerOfGestureDetector = Offset(
-                              424 / 2,
-                              424 /
-                                  2); //* Calcula a posição inicial do gesto em relação ao centro.
-                          final Offset startPosition = lastPosition! -
-                              centerOfGestureDetector; // * Obtém-se o ângulo da posição inicial em relação a x positivo.
-                          final Offset currentPosition = details
-                                  .localFocalPoint -
-                              centerOfGestureDetector; // * Obtém-se o ângulo da posição central em relação a x positivo.
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          width: 500,
+                          height: 500,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              image: AssetImage('assets/CDV1.jpeg'),
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onScaleUpdate: (details) {
+                            if (!isRotationLocked && lastPosition != null) {
+                              Offset centerOfGestureDetector = Offset(
+                                  424 / 2,
+                                  424 /
+                                      2); 
+                              final Offset startPosition = lastPosition! -
+                                  centerOfGestureDetector; 
+                              final Offset currentPosition = details
+                                      .localFocalPoint -
+                                  centerOfGestureDetector; 
 
-                          final startAngle = startPosition.direction;
-                          final currentAngle = currentPosition.direction;
+                              final startAngle = startPosition.direction;
+                              final currentAngle = currentPosition.direction;
 
-                          setState(() {
-                            angle += currentAngle -
-                                startAngle; //* Nesta parte ela atualiza o ângulo de rotação com base na diferença entre o ângulo inicial e o ângulo final.
-                            scale = details.scale;
-                          });
-                        }
-                        lastPosition = details.localFocalPoint;
-                      },
-                      onScaleEnd: (details) {
-                        lastPosition = null;
-                      },
-                      // * Lado A
-                      // * Aplicação do Zoom (Imagem fixa e Independente)
-                      child: Transform.scale(
-                        scale: scale,
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              width: 500,
-                              height: 500,
+                              setState(() {
+                                angle += currentAngle -
+                                    startAngle; 
+                              });
+                            }
+                            lastPosition = details.localFocalPoint;
+                          },
+                          onScaleEnd: (details) {
+                            lastPosition = null;
+                          },
+                          child: Transform.rotate(
+                            angle: angle,
+                            child: Container(
+                              width: 373,
+                              height: 373,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
-                                  image: AssetImage('assets/CDV1.jpeg'),
-                                  // fit: BoxFit.cover,
+                                  image: AssetImage('assets/CDV.jpeg'),
                                 ),
                               ),
                             ),
-                            //* Lado B
-                            Transform.rotate(
-                              angle: angle,
-                              child: Container(
-                                width: 373,
-                                height: 373,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/CDV.jpeg'),
-                                    // fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
                 ),
