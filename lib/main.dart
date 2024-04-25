@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Computador de voo',
+      title: 'Computador de Vôo',
       theme: ThemeData(),
       home: MyWheelApp(),
     );
@@ -91,10 +91,11 @@ class _MyWheelAppState extends State<MyWheelApp> {
                 ),
                 SizedBox(height: 10),
                 Center(
+                  // Zoom
                   child: InteractiveViewer(
-                    // boundaryMargin: EdgeInsets.all(100),
                     minScale: 0.1,
                     maxScale: 2.5,
+                    // Lado A (Parte preta)
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
@@ -108,25 +109,19 @@ class _MyWheelAppState extends State<MyWheelApp> {
                             ),
                           ),
                         ),
+                        // Rotação
                         GestureDetector(
                           onScaleUpdate: (details) {
                             if (!isRotationLocked && lastPosition != null) {
-                              Offset centerOfGestureDetector = Offset(
-                                  424 / 2,
-                                  424 /
-                                      2); 
-                              final Offset startPosition = lastPosition! -
-                                  centerOfGestureDetector; 
-                              final Offset currentPosition = details
-                                      .localFocalPoint -
-                                  centerOfGestureDetector; 
+                              Offset centerOfGestureDetector = Offset(424 / 2,424 /2); 
+                              final Offset startPosition = lastPosition! - centerOfGestureDetector; 
+                              final Offset currentPosition = details .localFocalPoint - centerOfGestureDetector; 
 
                               final startAngle = startPosition.direction;
                               final currentAngle = currentPosition.direction;
 
                               setState(() {
-                                angle += currentAngle -
-                                    startAngle; 
+                                angle += currentAngle - startAngle; 
                               });
                             }
                             lastPosition = details.localFocalPoint;
@@ -134,6 +129,7 @@ class _MyWheelAppState extends State<MyWheelApp> {
                           onScaleEnd: (details) {
                             lastPosition = null;
                           },
+                          // Lado B (Parte branca - Rotação)
                           child: Transform.rotate(
                             angle: angle,
                             child: Container(
