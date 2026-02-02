@@ -54,13 +54,6 @@ O desenvolvimento não foi isolado. Atuei como **Desenvolvedor Mobile Principal*
 
 ---
 
-## 📸 Screenshots (Demonstração)
-
-*(Espaço reservado para adicionar prints ou GIFs do aplicativo funcionando)*
-<!-- Dica: Adicione imagens na pasta /assets do seu repo e linke aqui -->
-
----
-
 ## 🚀 Como Executar
 
 ```bash
@@ -86,13 +79,3 @@ Projeto: WP2-CETELI-1-T - Computador de Voo Programa: Iniciação Científica J�
 <img src="https://avatars.githubusercontent.com/matteorocha" width="100px;" alt="Foto do Matheus Rocha"/><br> Matheus Rocha Canto Graduando em Engenharia da Computação | Dev Mobile & QA
 
 
-***
-
-### Por que este README ajuda no seu objetivo (PCD / Híbrido / P&D)?
-
-1.  **Demonstra Colaboração (Soft Skill):** A seção *"Trabalho Multidisciplinar"* prova que você sabe trabalhar em equipe (com Designer e Pesquisador), combatendo o estigma de que autistas trabalham apenas sozinhos [1, 2].
-2.  **Mostra Rigor (P&D):** Citar as **480 horas**, o contexto institucional (Samsung/UFAM) e a "tradução de lógica matemática" atrai recrutadores de institutos como Sidia e INDT, que buscam exatamente esse perfil acadêmico-técnico [1, 3].
-3.  **Tecnologia Clara:** Os badges e a seção de instalação mostram que você domina o ecossistema Flutter/Dart, essencial para as vagas de Mobile que você busca [2, 4].
-4.  **Organização (TDAH):** A estrutura limpa e hierárquica do documento serve como prova prática de que você é organizado e capaz de documentar seu trabalho, uma habilidade crítica para quem quer trabalhar remoto [5].
-
-**Dica Final:** Se você tiver *screenshots* (capturas de tela) do aplicativo rodando, adicione
