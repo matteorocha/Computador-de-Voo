@@ -54,6 +54,16 @@ O desenvolvimento não foi isolado. Atuei como **Desenvolvedor Mobile Principal*
 
 ---
 
+--------------------------------------------------------------------------------
+📄 Contexto Institucional
+Projeto: WP2-CETELI-1-T - Computador de Voo Programa: Iniciação Científica Júnior (ICTJr) - Projeto SUPER Instituição: Universidade Federal do Amazonas (UFAM) Parceiro: Samsung Período: Abril/2023 - Março/2024
+
+--------------------------------------------------------------------------------
+👨‍💻 Autor
+<img src="https://avatars.githubusercontent.com/matteorocha" width="100px;" alt="Foto do Matheus Rocha"/><br> Matheus Rocha Canto Graduando em Engenharia da Computação | Dev Mobile & QA
+
+---
+
 ## 🚀 Como Executar
 
 ```bash
@@ -70,12 +80,5 @@ $ flutter pub get
 $ flutter run
 
 
---------------------------------------------------------------------------------
-📄 Contexto Institucional
-Projeto: WP2-CETELI-1-T - Computador de Voo Programa: Iniciação Científica Júnior (ICTJr) - Projeto SUPER Instituição: Universidade Federal do Amazonas (UFAM) Parceiro: Samsung Período: Abril/2023 - Março/2024
-
---------------------------------------------------------------------------------
-👨‍💻 Autor
-<img src="https://avatars.githubusercontent.com/matteorocha" width="100px;" alt="Foto do Matheus Rocha"/><br> Matheus Rocha Canto Graduando em Engenharia da Computação | Dev Mobile & QA
 
 
