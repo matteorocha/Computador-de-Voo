@@ -60,7 +60,7 @@ Projeto: WP2-CETELI-1-T - Computador de Voo Programa: Iniciação Científica J�
 
 --------------------------------------------------------------------------------
 👨‍💻 Autor
-<img src="https://avatars.githubusercontent.com/matteorocha" width="100px;" alt="Foto do Matheus Rocha"/><br> Matheus Rocha Canto Graduando em Engenharia da Computação | Dev Mobile & QA
+Matheus Rocha Canto Graduando em Engenharia da Computação | Dev Mobile & QA
 
 ---
 
@@ -78,7 +78,4 @@ $ flutter pub get
 
 # Execute a aplicação
 $ flutter run
-
-
-
 
